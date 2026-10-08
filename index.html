@@ -1,1 +1,125 @@
 
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7047eb">
+  <title>Estuda Comigo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">EC</div>
+    <div>
+      <h2>Estuda Comigo 💜</h2>
+      <p>Seu espaço de aprendizagem</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="tela ativa">
+      <div class="boas-vindas">
+        <span>✨ SEU FUTURO COMEÇA AQUI</span>
+        <h1>Olá, estudante!</h1>
+        <p>Aprenda no seu ritmo e conquiste seus objetivos.</p>
+        <button onclick="abrirTela('materias')">Começar a estudar →</button>
+      </div>
+
+      <h2>O que vamos estudar hoje?</h2>
+      <div class="grade">
+        <button class="atalho" onclick="abrirTela('materias')">📚<br>Matérias</button>
+        <button class="atalho" onclick="abrirTela('quiz')">📝<br>Quiz</button>
+        <button class="atalho" onclick="abrirTela('planner')">📅<br>Planner</button>
+        <button class="atalho" onclick="abrirTela('progresso')">📈<br>Progresso</button>
+      </div>
+
+      <div class="cartao">
+        <h3>🌱 Sua meta de hoje</h3>
+        <p>Estude por 20 minutos e responda algumas questões.</p>
+      </div>
+    </section>
+
+    <section id="materias" class="tela">
+      <h1>📚 Matérias</h1>
+      <p>Escolha uma matéria para estudar.</p>
+
+      <div class="cartao">
+        <h3>➗ Matemática</h3>
+        <p>Porcentagem, frações e operações.</p>
+        <button onclick="mostrarResumo('matematica')">Ver resumo</button>
+      </div>
+
+      <div class="cartao">
+        <h3>📖 Português</h3>
+        <p>Interpretação de texto e gramática.</p>
+        <button onclick="mostrarResumo('portugues')">Ver resumo</button>
+      </div>
+
+      <div class="cartao">
+        <h3>🌎 História e Geografia</h3>
+        <p>Sociedade, lugares e acontecimentos.</p>
+        <button onclick="mostrarResumo('humanas')">Ver resumo</button>
+      </div>
+
+      <div class="cartao">
+        <h3>🇬🇧 Inglês</h3>
+        <p>Vocabulário e expressões básicas.</p>
+        <button onclick="mostrarResumo('ingles')">Ver resumo</button>
+      </div>
+
+      <div id="resumo" class="cartao" hidden></div>
+    </section>
+
+    <section id="quiz" class="tela">
+      <h1>📝 Quiz rápido</h1>
+      <p>Teste seus conhecimentos!</p>
+      <div class="cartao">
+        <p id="numero">Questão 1 de 3</p>
+        <h3 id="pergunta">Quanto é 25% de 80?</h3>
+        <div id="alternativas"></div>
+        <p id="resultado"></p>
+        <button id="proxima" onclick="proximaQuestao()" hidden>
+          Próxima questão →
+        </button>
+      </div>
+    </section>
+
+    <section id="planner" class="tela">
+      <h1>📅 Meu planner</h1>
+      <p>Organize sua rotina de estudos.</p>
+      <div class="cartao">
+        <form id="formulario">
+          <label for="tarefa">Nova tarefa:</label>
+          <input id="tarefa" type="text" placeholder="Ex.: estudar Matemática" required>
+          <button type="submit">Adicionar tarefa</button>
+        </form>
+        <div id="lista"></div>
+      </div>
+    </section>
+
+    <section id="progresso" class="tela">
+      <h1>📈 Meu progresso</h1>
+      <div class="cartao">
+        <h3>Questões respondidas</h3>
+        <p id="respondidas">0</p>
+        <h3>Respostas corretas</h3>
+        <p id="acertos">0</p>
+        <h3>Tarefas concluídas</h3>
+        <p id="concluidas">0</p>
+      </div>
+    </section>
+  </main>
+
+  <nav>
+    <button onclick="abrirTela('inicio')">🏠<small>Início</small></button>
+    <button onclick="abrirTela('materias')">📚<small>Matérias</small></button>
+    <button onclick="abrirTela('quiz')">📝<small>Quiz</small></button>
+    <button onclick="abrirTela('planner')">📅<small>Planner</small></button>
+    <button onclick="abrirTela('progresso')">📈<small>Progresso</small></button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
